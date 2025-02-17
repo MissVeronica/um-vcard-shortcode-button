@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - vCard shortcode button
  * Description:     Extension to Ultimate Member for creating a User Profile vCard
- * Version:         1.0.0
+ * Version:         1.1.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -41,6 +41,7 @@ class UM_vCard_Shortcode_Button {
                                         'city'       => 'city',
                                         'zip'        => 'zip',
                                         'state'      => 'state',
+                                        'address'    => 'address',
                                         'org'        => 'company',
                                         'title'      => 'title',
                                         'url'        => 'user_url',
@@ -102,6 +103,15 @@ class UM_vCard_Shortcode_Button {
             $gender = strtoupper( substr( um_user( 'gender' ), 0, 1 ));
             $site   = strtoupper( $atts['#place'] );
 
+            $address = esc_attr( um_user( $atts['address'] ));
+            if ( empty( $address )) {
+                $address = esc_attr( um_user( $atts['street'] )) . ";" .
+                           esc_attr( um_user( $atts['city'] )) . ";" .
+                           esc_attr( um_user( $atts['state'] )) . ";" .
+                           esc_attr( um_user( $atts['zip'] )) . ";" .
+                           esc_attr( um_user( 'country' ));
+            }
+
             $vcard  = "BEGIN:VCARD\r\n";
             $vcard .= "VERSION:3.0\r\n";
             $vcard .= "N:" .                   esc_attr( $n ) . ";;;\r\n";
@@ -115,11 +125,7 @@ class UM_vCard_Shortcode_Button {
             $vcard .= "URL:" .                 esc_attr( um_user( $atts['url'] )) . "\r\n";
             $vcard .= "TEL;{$site}:" .         esc_attr( um_user( 'phone_number' )) . "\r\n";
             $vcard .= "TEL;CELL:" .            esc_attr( um_user( 'mobile_number' )) . "\r\n";
-            $vcard .= "ADR;{$site}:;;" .       esc_attr( um_user( $atts['street'] )) . ";" .
-                                               esc_attr( um_user( $atts['city'] )) . ";" .
-                                               esc_attr( um_user( $atts['state'] )) . ";" .
-                                               esc_attr( um_user( $atts['zip'] )) . ";" .
-                                               esc_attr( um_user( 'country' )) . "\r\n";
+            $vcard .= "ADR;{$site}:;;" .       $address . "\r\n";
             $vcard .= "EMAIL;PREF=1:" .        esc_attr( um_user( 'user_email' )) . "\r\n";
             $vcard .= "EMAIL:" .               esc_attr( um_user( 'secondary_user_email' )) . "\r\n";
             $vcard .= "TZ:" .                  esc_attr( um_user( 'timezone' )) . "\r\n";
@@ -189,4 +195,3 @@ class UM_vCard_Shortcode_Button {
 }
 
 new UM_vCard_Shortcode_Button();
-
