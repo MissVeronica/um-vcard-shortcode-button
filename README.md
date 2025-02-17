@@ -25,6 +25,9 @@ Button title text can be set in the shortcode with this example: <code>[um_vcard
 *    'button'     => 'Download vCard'
 *    'html_title' => 'Create the vCard for this user profile'
 *    '#place'     => 'WORK'
-  
+
+## Updates
+None
+
 ## Installation & Updates
-Download the zip file from the Green button and install as a new WP Plugin, activate the plugin.
+Download the zip file from the Green button and install or update as a new WP Plugin, activate the plugin.
