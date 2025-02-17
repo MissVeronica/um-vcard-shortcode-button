@@ -12,5 +12,19 @@ or can be changed in the shortcode to <code>vcard="email"</code> when the reques
 Button text can be set in the shortcode with this example: <code>[um_vcard_button button="Download your vCard file"]</code>.
 Button title text can be set in the shortcode with this example: <code>[um_vcard_button html_title="Create the vCard for this user profile"]</code>
 
-## Installation
-Download the zip file and install as a new WP Plugin, activate the plugin.
+### Default meta_key values which can be changed like [um_vcard_button org="shop-name"]
+*    'street'     => 'street'
+*    'city'       => 'city'
+*    'zip'        => 'zip'
+*    'state'      => 'state'
+*    'org'        => 'company'
+*    'title'      => 'title'
+*    'url'        => 'user_url'
+*    'revision'   => 'last_update'
+*    'vcard'      => 'download'
+*    'button'     => 'Download vCard'
+*    'html_title' => esc_html__( 'Create the vCard for this user profile', 'ultimate-member' )
+*    '#place'     => 'WORK'
+  
+## Installation & Updates
+Download the zip file from the Green button and install as a new WP Plugin, activate the plugin.
