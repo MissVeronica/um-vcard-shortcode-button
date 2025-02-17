@@ -13,6 +13,7 @@ Button text can be set in the shortcode with this example: <code>[um_vcard_butto
 Button title text can be set in the shortcode with this example: <code>[um_vcard_button html_title="Create the vCard for this user profile"]</code>
 
 ### Default meta_key values which can be changed like [um_vcard_button org="shop-name"]
+*    'address'    => 'address' excludes 'street', 'city', 'zip', 'state', 'country' 
 *    'street'     => 'street'
 *    'city'       => 'city'
 *    'zip'        => 'zip'
