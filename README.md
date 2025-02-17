@@ -23,7 +23,7 @@ Button title text can be set in the shortcode with this example: <code>[um_vcard
 *    'revision'   => 'last_update'
 *    'vcard'      => 'download'
 *    'button'     => 'Download vCard'
-*    'html_title' => esc_html__( 'Create the vCard for this user profile', 'ultimate-member' )
+*    'html_title' => 'Create the vCard for this user profile'
 *    '#place'     => 'WORK'
   
 ## Installation & Updates
