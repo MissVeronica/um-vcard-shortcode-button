@@ -22,10 +22,10 @@ Button title text can be set in the shortcode with this example: <code>[um_vcard
 *    'title'      => 'title'
 *    'url'        => 'user_url'
 *    'revision'   => 'last_update'
-*    'vcard'      => 'download'
+*    'vcard'      => 'download' option 'email'
 *    'button'     => 'Download vCard'
 *    'html_title' => 'Create the vCard for this user profile'
-*    '#place'     => 'WORK'
+*    '#place'     => 'WORK' option 'HOME'
 
 ## Updates
 1. Version 1.1.0 Included a macro address
