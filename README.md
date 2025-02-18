@@ -31,4 +31,4 @@ Button title text can be set in the shortcode with this example: <code>[um_vcard
 1. Version 1.1.0 Included a macro address
 
 ## Installation & Updates
-Download the zip file from the Green button and install or update as a new WP Plugin, activate the plugin.
+Download the ZIP file from the Green Code button and install or update as a new WP Plugin, activate the plugin.
